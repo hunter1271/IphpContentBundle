@@ -3,16 +3,7 @@
 
 namespace Iphp\ContentBundle\Block;
 
-use Symfony\Component\HttpFoundation\Response;
-
-use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Validator\ErrorElement;
-
-use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\BlockBundle\Block\BaseBlockService;
-
-//use Sonata\PageBundle\Model\PageInterface;
-//use Sonata\PageBundle\Generator\Mustache;
 
 
 abstract class ContentBlockService extends BaseBlockService
@@ -35,12 +26,12 @@ abstract class ContentBlockService extends BaseBlockService
     }
 
     /**
-     * @param array
+     * @param callable $prepareQueryBuilder
+     *
+     * @return array
      */
     protected function getContents(\Closure $prepareQueryBuilder)
     {
         return $this->getRepository()->createQuery('c', $prepareQueryBuilder)->getResult();
     }
-
-
 }

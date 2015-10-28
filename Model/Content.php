@@ -97,7 +97,7 @@ abstract class Content implements ContentInterface
     protected $filesMedia;
 
     /**
-     * @var ContentImageMedia[]
+     * @var BaseContentImageMedia[]
      */
     protected $imagesMedia;
 
